@@ -22,12 +22,26 @@ class Todo {
       .addEventListener("click", () => {});
   }
 
-  generateCheckboxEl() {
+  _generateCheckboxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
     this._todoLabel = this._todoElement.querySelector(".todo__label");
     this._todoCheckboxEl.checked = this._data.completed;
     this._todoCheckboxEl.id = `todo-${data.id}`;
     this._todoLabel.setAttribute("for", `todo-${data.id}`);
+  }
+
+  generateDueDate() {
+    this._dueDate = new Date(this._data.date);
+    if (!isNaN(this._dueDate)) {
+      this._todoDate.textContent = `Due: ${this._dueDate.toLocaleString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        }
+      )}`;
+    }
   }
 
   getView() {
@@ -42,6 +56,7 @@ class Todo {
 
     todoNameEl.textContent = data.name;
 
+    this._generateDueDate();
     this._generateCheckboxEl();
     this._setEventListeners();
 
