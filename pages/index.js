@@ -26,9 +26,6 @@ const generateTodo = (data) => {
   // return generateTodo;
 };
 
-// Apply id and for attributes.
-// The id will initially be undefined for new todos.
-
 // If a due date has been set, parsing this it with `new Date` will return a
 // number. If so, we display a string version of the due date in the todo.
 //   const dueDate = new Date(data.date);
@@ -39,10 +36,6 @@ const generateTodo = (data) => {
 //       day: "numeric",
 //     })}`;
 //   }
-
-//   todoDeleteBtn.addEventListener("click", () => {
-//     todoElement.remove();
-//   });
 
 // };
 
