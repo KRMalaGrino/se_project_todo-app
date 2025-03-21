@@ -54,9 +54,9 @@ class FormValidator {
   }
 
   resetValidation() {
-    const form = document.getElementById(addTodoForm);
+    const form = document.getElementById(formSelector);
     form.reset();
-    buttonElement.disabled = true;
+    submitButtonSelector.disabled = true;
   }
 
   _setEventListeners() {
