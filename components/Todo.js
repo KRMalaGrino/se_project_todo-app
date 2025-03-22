@@ -15,10 +15,6 @@ class Todo {
       this._todoElement.remove();
     });
 
-    // this._todoCheckboxEl._setEventListener("change", () => {
-    //   this._completed = !this._completed;
-    // });
-
     this._todoElement
       .querySelector(".todo__delete-btn")
       .addEventListener("click", () => {});
@@ -27,6 +23,8 @@ class Todo {
       .querySelector(".todo__completed")
       .addEventListener("click", () => {});
   }
+
+  _generateName() {}
 
   _generateCheckboxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
