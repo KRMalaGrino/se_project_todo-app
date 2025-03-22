@@ -61,7 +61,7 @@ class FormValidator {
     }
   };
 
-  resetValidation() {
+  resetValidation(settings) {
     const form = document.getElementById(this._formSelector);
     form.reset();
     this._submitButtonSelector.disabled = true;
