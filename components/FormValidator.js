@@ -38,50 +38,58 @@ class FormValidator {
   }
 
   _hasInvalidInput() {
-    return inputList.some((inputElement) => {
+    return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   }
 
-  toggleButtonState() {
-    if (hasInvalidInput(inputList)) {
-      this._buttonElement.classList.add(settings.inactiveButtonClass);
-      this._buttonElement.disabled = true;
-    } else {
-      this._buttonElement.classList.remove(settings.inactiveButtonClass);
-      this._buttonElement.disabled = false;
-    }
+  _disableSubmitButton() {
+    this._buttonElement.classList.add(this._inactiveButtonClass);
+    this._buttonElement.disabled = true;
   }
+
+  _enableSubmitButton() {
+    this._buttonElement.classList.remove(this._inactiveButtonClass);
+    this._buttonElement.disabled = false;
+  }
+
+  _toggleButtonState = () => {
+    if (this._hasInvalidInput()) {
+      this._disableSubmitButton();
+    } else {
+      this._enableSubmitButton();
+    }
+  };
 
   resetValidation() {
-    const form = document.getElementById(formSelector);
+    const form = document.getElementById(this._formSelector);
     form.reset();
-    submitButtonSelector.disabled = true;
+    this._submitButtonSelector.disabled = true;
   }
 
-  _setEventListeners() {
+  _setEventListeners(settings) {
     this._inputList = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
-    this._buttonElement = this._formElement.querySelector(
-      settings.submitButtonSelector
+    this._buttonElement = this._formEl.querySelector(
+      this._submitButtonSelector
     );
 
-    toggleButtonState(inputList, buttonElement, settings);
+    this._toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        toggleButtonState(inputList, buttonElement, settings);
+        this._toggleButtonState();
       });
     });
   }
 
-  enableValidation() {
+  enableValidation(settings) {
     this._formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
-    this._setEventListeners();
+    this._setEventListeners(settings);
   }
 }
 
