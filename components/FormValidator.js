@@ -8,7 +8,7 @@ class FormValidator {
     this._formEl = formEl;
   }
 
-  _showInputError() {
+  _showInputError(formElement, inputElement) {
     this._errorElementId = `#${inputElement.id}-error`;
     this._errorElement = formElement.querySelector(errorElementId);
     this._inputElement.classList.add(settings.inputErrorClass);
@@ -16,12 +16,12 @@ class FormValidator {
     this._errorElement.classList.add(settings.errorClass);
   }
 
-  _hideInputError() {
+  _hideInputError(formElement, inputElement) {
     this._errorElementId = `#${inputElement.id}-error`;
-    this._errorElement = formElement.querySelector(errorElementId);
-    this._inputElement.classList.remove(settings.inputErrorClass);
-    this._errorElement.classList.remove(settings.errorClass);
-    this._errorElement.textContent = "";
+    // this._errorElement = formElement.querySelector(errorElementId);
+    // this._inputElement.classList.remove(settings.inputErrorClass);
+    // this._errorElement.classList.remove(settings.errorClass);
+    // this._errorElement.textContent = "";
   }
 
   _checkInputValidity(inputElement) {
