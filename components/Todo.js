@@ -67,7 +67,6 @@ class Todo {
     this.generateDueDate();
     this._generateCheckboxEl();
     this._setEventListeners();
-    console.log(this._todoElement);
     return this._element;
   }
 }
