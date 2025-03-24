@@ -61,13 +61,13 @@ class Todo {
   getView() {
     this._todoElement = this._getTemplate();
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
-    // this._todoDate = this._todoElement.querySelector(".todo__date");
-    // this._todoDate.textContent = this._date;
+    this._todoDate = this._todoElement.querySelector(".todo__date");
+    this._todoDate.textContent = this._date;
     this._generateName();
     this.generateDueDate();
     this._generateCheckboxEl();
     this._setEventListeners();
-    return this._element;
+    return this._todoElement;
   }
 }
 
