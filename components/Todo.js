@@ -14,14 +14,8 @@ class Todo {
     this._todoDeleteBtn.addEventListener("click", () => {
       this._todoElement.remove();
     });
-
-    this._todoElement
-      .querySelector(".todo__delete-btn")
-      .addEventListener("click", () => {});
-
-    this._todoElement
-      .querySelector(".todo__completed")
-      .addEventListener("click", () => {});
+    this._todoElement.addEventListener("click", () => {});
+    this._todoElement.addEventListener("click", () => {});
   }
 
   _generateName() {
@@ -40,7 +34,7 @@ class Todo {
   generateDueDate() {
     this._todoDate = new Date(this._date);
     if (!isNaN(this._todoDate)) {
-      this._todoDate.textContent = `Due: ${this._todoDate.toLocaleString(
+      this._todoDateElement.textContent = `Due: ${this._todoDate.toLocaleString(
         "en-US",
         {
           year: "numeric",
@@ -61,7 +55,7 @@ class Todo {
   getView() {
     this._todoElement = this._getTemplate();
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
-    this._todoDate = this._todoElement.querySelector(".todo__date");
+    this._todoDateElement = this._todoElement.querySelector(".todo__date");
     this._todoDate.textContent = this._date;
     this._generateName();
     this.generateDueDate();
