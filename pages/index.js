@@ -48,7 +48,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const id = uuidv4();
   const values = { name, date, id }; // ----------------
   renderTodo(); // ----------------
-  todosList.append(todo);
+  todosList.append(todo); // ----------------
   closeModal(addTodoPopup);
 });
 
