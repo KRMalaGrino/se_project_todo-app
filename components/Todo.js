@@ -32,6 +32,7 @@ class Todo {
   }
 
   generateDueDate() {
+    this._todoDateElement = this._todoElement.querySelector(".todo__date");
     this._todoDate = new Date(this._date);
     if (!isNaN(this._todoDate)) {
       this._todoDateElement.textContent = `Due: ${this._todoDate.toLocaleString(
@@ -55,8 +56,6 @@ class Todo {
   getView() {
     this._todoElement = this._getTemplate();
     this._todoDeleteBtn = this._todoElement.querySelector(".todo__delete-btn");
-    this._todoDateElement = this._todoElement.querySelector(".todo__date");
-    this._todoDate.textContent = this._date;
     this._generateName();
     this.generateDueDate();
     this._generateCheckboxEl();
