@@ -14,5 +14,5 @@ This project was heavily focused on javascript using refactoring , classes and i
 
 This project is deployed on GitHub Pages:
 
-----------------------------------------
+(https://krmalagrino.github.io/se_project_todo-app/)
 
