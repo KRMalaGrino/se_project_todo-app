@@ -8,11 +8,11 @@ This project was heavily focused on javascript using refactoring , classes and i
 
 **Pictures, GIFs, & screenshots**
 
-=======================================
+https://drive.google.com/file/d/1pbRIb8bGVrONass-HzTthQSGN5v9w3L1/view?usp=drive_link
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-(https://krmalagrino.github.io/se_project_todo-app/)
+https://krmalagrino.github.io/se_project_todo-app/
 
