@@ -1,17 +1,18 @@
-# Simple Todo App
+# The Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+A convenient "to-do" application for the cellphone or computer to help one stay ontop of priority tasks . Users can add a new "todo", check-off completed "to-dos" with the checkbox & use the delete button .
 
-## Functionality
+## Functionality & Technology
 
-Give a more detailed explanation of the project and its functionality.
+This project was heavily focused on javascript using refactoring , classes and import & export statements . All code was already written for us before hand . We had an individual file path for each individual class . The code ended up being much more organized than the beginning of the project .
 
-## Technology
+**Pictures, GIFs, & screenshots**
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+=======================================
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+----------------------------------------
+
