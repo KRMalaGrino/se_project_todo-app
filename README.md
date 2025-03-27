@@ -6,7 +6,7 @@ A convenient "to-do" application for the cellphone or computer to help one stay 
 
 This project was heavily focused on javascript using refactoring , classes and import & export statements . All code was already written for us before hand . We had an individual file path for each individual class . The code ended up being much more organized than the beginning of the project .
 
-**Pictures, GIFs, & screenshots**
+## Pictures, GIFs, & screenshots
 
 https://drive.google.com/file/d/1pbRIb8bGVrONass-HzTthQSGN5v9w3L1/view?usp=drive_link
 
