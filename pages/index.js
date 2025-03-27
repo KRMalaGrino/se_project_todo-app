@@ -22,7 +22,7 @@ const section = new Section({
 });
 
 // Finish calling the renderItems method ------------- Need help 2
-renderItems();
+// renderItems();
 
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
@@ -57,7 +57,7 @@ addTodoForm.addEventListener("submit", (evt) => {
 
   const id = uuidv4();
   const values = { name, date, id };
-  addItem(values);
+  generateTodo(values);
   closeModal(addTodoPopup);
 });
 
