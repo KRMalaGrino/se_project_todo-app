@@ -4,7 +4,7 @@ A convenient "to-do" application for the cellphone or computer to help one stay 
 
 ## Functionality & Technology
 
-This project was heavily focused on javascript using refactoring , classes and import & export statements . All code was already written for us before hand . We had an individual file path for each individual class . The code ended up being much more organized than the beginning of the project .
+This project was heavily focused on javascript using refactoring , classes and import & export statements . With individual file paths for each individual class . The code ended up being much more organized than the beginning of the project .
 
 ## Pictures, GIFs, & screenshots
 
