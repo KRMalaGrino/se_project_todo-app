@@ -4,12 +4,12 @@ class Popup {
   }
 
   open() {
-    modal.classList.add("popup_visible");
+    this._popupSelector.classList.add("popup_visible");
     document.addEventListener("keydown", _handleEscapeClose());
   }
 
   close() {
-    modal.classList.remove("popup_visible");
+    this._popupSelector.classList.remove("popup_visible");
     document.removeEventListener("keydown", _handleEscapeClose());
   }
 

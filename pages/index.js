@@ -23,21 +23,11 @@ const section = new Section({
 
 section.renderItems();
 
-// call the PopupWithForm classes
+// call the PopupWithForm class
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: () => {},
 });
-
-// const openModal = (modal) => {
-//   modal.classList.add("popup_visible");
-//   document.addEventListener("keydown", _handleEscapeClose());
-// };
-
-// const closeModal = (modal) => {
-//   modal.classList.remove("popup_visible");
-//   document.removeEventListener("keydown", _handleEscapeClose());
-// };
 
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
@@ -46,11 +36,11 @@ const generateTodo = (data) => {
 };
 
 addTodoButton.addEventListener("click", () => {
-  openModal();
+  addTodoPopup.open();
 });
 
 addTodoCloseBtn.addEventListener("click", () => {
-  closeModal(addTodoPopupEl);
+  addTodoPopup.close();
 });
 
 addTodoForm.addEventListener("submit", (evt) => {
