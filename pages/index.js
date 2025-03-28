@@ -22,10 +22,21 @@ const section = new Section({
 
 section.renderItems();
 
-// Finish calling the PopupWithForm class code
+// Finish calling the PopupWithForm class code 2
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
-  handleFormSubmit: () => {},
+  handleFormSubmit: (inputValues) => {
+    // const name = evt.target.name.value;
+    // const dateInput = evt.target.date.value;
+
+    const date = new Date(dateInput);
+    date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+
+    const id = uuidv4();
+    const values = { name, date, id };
+    generateTodo(values);
+    this._popupElement.close();
+  },
 });
 
 addTodoPopup.setEventListeners();
@@ -36,24 +47,9 @@ const generateTodo = (data) => {
   return todoElement;
 };
 
-// why not the open added to serEventListeners also ?
+// why not the open added to serEventListeners also ? 2
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
-});
-
-// add this to the setEventListeners method in Popup.js too later
-addTodoForm.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const name = evt.target.name.value;
-  const dateInput = evt.target.date.value;
-
-  const date = new Date(dateInput);
-  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-
-  const id = uuidv4();
-  const values = { name, date, id };
-  generateTodo(values);
-  addTodoPopup.close();
 });
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
