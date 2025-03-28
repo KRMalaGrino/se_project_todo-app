@@ -1,9 +1,6 @@
 class Popup {
-  constructor(popup) {
-    this._popup = popup;
-    // maybe like this
-    // this._popup = document.querySelector(".popup");
-    // this._popup = document.querySelector(popup);
+  constructor({ popupSelector }) {
+    this._popupSelector = document.querySelector(popupSelector);
   }
 
   open() {
@@ -26,9 +23,4 @@ class Popup {
   setEventListeners() {}
 }
 
-const PopupWithForm = new Popup(popupSelector, () => {
-  _getInputValues(data);
-  setEventListeners();
-});
-
-export { Popup, PopupWithForm };
+export default Popup;
