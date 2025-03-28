@@ -4,7 +4,7 @@ import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
-import Popup from "../components/Popup.js";
+import { Popup, PopupWithForm } from "../components/Popup.js";
 
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
@@ -21,6 +21,8 @@ const section = new Section({
 });
 
 section.renderItems();
+
+// call the Popup & PopupWithForm classes
 
 // const openModal = (modal) => {
 //   modal.classList.add("popup_visible");

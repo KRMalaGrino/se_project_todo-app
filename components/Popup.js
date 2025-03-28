@@ -26,4 +26,9 @@ class Popup {
   setEventListeners() {}
 }
 
-export default Popup;
+const PopupWithForm = new Popup(popupSelector, () => {
+  _getInputValues(data);
+  setEventListeners();
+});
+
+export { Popup, PopupWithForm };
