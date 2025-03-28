@@ -14,7 +14,7 @@ class Popup {
     document.removeEventListener("keydown", this._handleEscapeClose());
   }
   // Check work
-  _handleEscapeClose() {
+  _handleEscapeClose(evt) {
     if (evt.key === "Escape") {
       this.close(this._popupElement);
     }
@@ -25,11 +25,7 @@ class Popup {
     //   this.open();
     // });
 
-    this._popupCloseBtn.addEventListener("click", () => {
-      this.close();
-    });
-    // CLICKING OUTSIDE THE POPUP WILL CLOSE IT CODE -----------------
-    this._popupSelector.addEventListener("mousedown", (evt) => {
+    this._popupElement.addEventListener("mousedown", (evt) => {
       if (
         evt.target.classList.contains("popup") ||
         evt.target.classList.contains("popup__close")
