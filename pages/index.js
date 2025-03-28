@@ -10,7 +10,6 @@ import PopupWithForm from "../components/PopupWithForm.js";
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopupEl = document.querySelector("#add-todo-popup");
 const addTodoForm = document.forms["add-todo-form"];
-const addTodoCloseBtn = addTodoPopupEl.querySelector(".popup__close");
 // error in console 1
 const section = new Section({
   items: initialTodos,
@@ -23,11 +22,13 @@ const section = new Section({
 
 section.renderItems();
 
-// call the PopupWithForm class
+// Finish calling the PopupWithForm class code
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: () => {},
 });
+
+addTodoPopup.setEventListeners();
 
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
@@ -35,14 +36,12 @@ const generateTodo = (data) => {
   return todoElement;
 };
 
+// why not the open added to serEventListeners also ?
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
 });
 
-addTodoCloseBtn.addEventListener("click", () => {
-  addTodoPopup.close();
-});
-
+// add this to the setEventListeners method in Popup.js too later
 addTodoForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const name = evt.target.name.value;
@@ -54,7 +53,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const id = uuidv4();
   const values = { name, date, id };
   generateTodo(values);
-  closeModal(addTodoPopupEl);
+  addTodoPopup.close();
 });
 
 const newTodoValidator = new FormValidator(validationConfig, addTodoForm);
