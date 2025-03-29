@@ -28,7 +28,7 @@ const section = new Section({
 
 section.renderItems();
 
-// Finish calling the PopupWithForm class code 2
+// Finish calling the PopupWithForm class code
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
