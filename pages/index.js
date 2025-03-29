@@ -17,11 +17,13 @@ const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
 function handleCheck(completed) {
   todoCounter.updateCompleted(completed);
+  todoCounter.updateTotal(completed); // Check work
 }
 
 function handleDelete(completed) {
   if (completed) {
     todoCounter.updateCompleted(false);
+    todoCounter.updateTotal(false); // Check work
   }
 }
 // Generate Todo  -----------------------------------------------------

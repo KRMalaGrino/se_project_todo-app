@@ -17,6 +17,7 @@ class Todo {
     });
     this._todoCheckboxEl.addEventListener("change", () => {
       this._toggleCompletion();
+      this._toggleTotal(); // check work
       this._handleCheck(!this._completed);
     });
   }
@@ -51,6 +52,11 @@ class Todo {
 
   _toggleCompletion = () => {
     this._completed = !this._completed;
+  };
+
+  _toggleTotal = () => {
+    // check work
+    // this._total = !this._total;
   };
 
   _remove = () => {
