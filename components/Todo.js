@@ -1,18 +1,23 @@
-const todo = document.querySelector(".todo");
-
 class Todo {
-  constructor(data, selector) {
+  constructor(data, selector, handleCheck, handleDelete) {
     this._name = data.name;
     this._id = data.id;
     this._completed = data.completed;
     this._date = data.date;
 
     this._selector = selector;
+    this._handleCheck = handleCheck;
+    this._handleDelete = handleDelete;
   }
 
   _setEventListeners() {
     this._todoDeleteBtn.addEventListener("click", () => {
-      this._todoElement.remove();
+      this._handleDelete(this._completed);
+      this._remove();
+    });
+    this._todoCheckboxEl.addEventListener("change", () => {
+      this._toggleCompletion();
+      this._handleCheck(!this._completed);
     });
   }
 
@@ -43,6 +48,15 @@ class Todo {
       )}`;
     }
   }
+
+  _toggleCompletion = () => {
+    this._completed = !this._completed;
+  };
+
+  _remove = () => {
+    this._element.remove();
+    this._element = null;
+  };
 
   _getTemplate() {
     return document

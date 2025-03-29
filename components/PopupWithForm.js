@@ -13,7 +13,7 @@ class PopupWithForm extends Popup {
     this._inputList.forEach((input) => {
       // Add key/value pair to the empty object for each input
       // use bracket notation. Not dot. Only 1 line of code needed
-      input["name"] input["date"];
+      // input["name"] input["date"];
     });
     return inputValues;
   }
