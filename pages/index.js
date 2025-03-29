@@ -21,7 +21,7 @@ const section = new Section({
   items: initialTodos,
   renderer: (item) => {
     const element = generateTodo(item);
-    section.addItem(element); // section inside section ?? 1
+    section.addItem(element); // section inside section ??
   },
   containerSelector: ".todos__list",
 });
