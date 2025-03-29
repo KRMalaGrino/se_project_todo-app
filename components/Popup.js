@@ -10,17 +10,15 @@ class Popup {
   }
   // Check work 2
   close() {
-    console.log(this._popupElement.classList);
     this._popupElement.classList.remove("popup_visible");
     document.removeEventListener("keydown", this._handleEscapeClose);
-    console.log(this._popupElement.classList);
   }
   // Check work 2
-  _handleEscapeClose(evt) {
+  _handleEscapeClose = (evt) => {
     if (evt.key === "Escape") {
       this.close();
     }
-  }
+  };
   // Check work 2
   setEventListeners() {
     // this._popupCloseBtn.addEventListener("click", () => {
