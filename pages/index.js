@@ -48,8 +48,7 @@ section.renderItems();
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
   handleFormSubmit: (inputValues) => {
-    // const name = evt.target.name.value;
-    // const dateInput = evt.target.date.value;
+    // call _getInputValues here ?
 
     const date = new Date(dateInput);
     date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
