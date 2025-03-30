@@ -37,7 +37,7 @@ const section = new Section({
   items: initialTodos,
   renderer: (item) => {
     const element = generateTodo(item);
-    section.addItem(element); // section inside section ??
+    section.addItem(element);
   },
   containerSelector: ".todos__list",
 });
@@ -57,12 +57,11 @@ const addTodoPopup = new PopupWithForm({
     const id = uuidv4();
     const values = { name, date, id };
     generateTodo(values);
-    this._popupElement.close();
+    popupSelector.close();
   },
 });
 
 addTodoPopup.setEventListeners();
-// why not the open added to serEventListeners also ? 2
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
 });
