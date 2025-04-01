@@ -56,11 +56,11 @@ class Todo {
 
   _toggleTotal = () => {
     // check work
-    // this._total = !this._total;
+    this._total = !this._total;
   };
 
   _remove = () => {
-    this._element.remove();
+    this._element._remove();
     this._element = null;
   };
 

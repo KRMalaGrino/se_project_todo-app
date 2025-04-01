@@ -5,7 +5,6 @@ import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
 import Section from "../components/Section.js";
-import Popup from "../components/Popup.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 // Global Variables ---------------------------------------------------
@@ -44,20 +43,26 @@ const section = new Section({
 
 section.renderItems();
 // PopupWithForm  ----------------------------------------------------
-// Finish calling the PopupWithForm class code
+
+const handleFormSubmit = (data) => {
+  const name = data.name;
+  const dateInput = data.date;
+  const date = new Date(dateInput);
+  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+
+  const id = uuidv4();
+  const values = { name, date, id };
+  const todo = generateTodo(values);
+  section.addItem(todo);
+  todoCounter.updateTotal(true);
+  newTodoValidator.resetValidation();
+
+  addTodoPopup.close();
+};
+
 const addTodoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
-  handleFormSubmit: (inputValues) => {
-    // call _getInputValues here ?
-
-    const date = new Date(dateInput);
-    date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
-
-    const id = uuidv4();
-    const values = { name, date, id };
-    generateTodo(values);
-    popupSelector.close();
-  },
+  handleFormSubmit,
 });
 
 addTodoPopup.setEventListeners();
