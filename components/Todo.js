@@ -60,7 +60,9 @@ class Todo {
   };
 
   _remove = () => {
-    this._element._remove();
+    // check work
+    const itemToRemove = document.querySelector(".todo");
+    itemToRemove._remove();
     this._element = null;
   };
 
