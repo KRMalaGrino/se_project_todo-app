@@ -17,8 +17,8 @@ class Todo {
     });
     this._todoCheckboxEl.addEventListener("change", () => {
       this._toggleCompletion();
-      this._toggleTotal(); // check work
-      this._handleCheck(!this._completed);
+      this._toggleTotal();
+      this._handleCheck(this._completed);
     });
   }
 
@@ -55,15 +55,11 @@ class Todo {
   };
 
   _toggleTotal = () => {
-    // check work
     this._total = !this._total;
   };
 
   _remove = () => {
-    // check work
-    const itemToRemove = document.querySelector(".todo");
-    itemToRemove._remove();
-    this._element = null;
+    this._todoElement.remove();
   };
 
   _getTemplate() {
