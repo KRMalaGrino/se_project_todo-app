@@ -11,16 +11,15 @@ import TodoCounter from "../components/TodoCounter.js";
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoForm = document.forms["add-todo-form"];
 // TodoCounter  -------------------------------------------------------
-// finish calling the TodoCounter
 const todoCounter = new TodoCounter(initialTodos, ".counter__text");
 
 function handleCheck(completed) {
-  todoCounter.updateCompleted(completed); // Check work
+  todoCounter.updateCompleted(completed);
 }
 
 function handleDelete(completed) {
   if (completed) {
-    todoCounter.updateCompleted(false); // Check work
+    todoCounter.updateCompleted(false);
   }
   todoCounter.updateTotal(false);
 }
@@ -30,12 +29,17 @@ const generateTodo = (data) => {
   const todoElement = todo.getView();
   return todoElement;
 };
+// RenderTodo  --------------------------------------------------------
+const renderTodo = (item) => {
+  const todo = generateTodo(item);
+  section.addItem(todo);
+};
+
 // Section  -----------------------------------------------------------
 const section = new Section({
   items: initialTodos,
   renderer: (item) => {
-    const element = generateTodo(item);
-    section.addItem(element);
+    renderTodo(item);
   },
   containerSelector: ".todos__list",
 });
@@ -51,8 +55,7 @@ const handleFormSubmit = (data) => {
 
   const id = uuidv4();
   const values = { name, date, id };
-  const todo = generateTodo(values);
-  section.addItem(todo);
+  renderTodo(values);
   todoCounter.updateTotal(true);
   newTodoValidator.resetValidation();
 
